@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chapel Jumper</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="hud">
+      <div class="title">Chapel Jumper</div>
+      <div class="stats">
+        <span id="score">0</span>
+      </div>
+    </header>
+
+    <div id="game" aria-label="Game area" role="application">
+      <div id="ground"></div>
+      <div id="player" aria-label="Chapel"></div>
+      <div id="overlay" class="overlay show">
+        <h1>Press <kbd>Space</kbd> to Jump</h1>
+        <p>Avoid the jumps. Every 5 jumps: neigh! 🐴</p>
+        <small>Press <kbd>Enter</kbd> or click to start / restart</small>
+      </div>
+    </div>
+
+    <footer class="tips">
+      Space = Jump &nbsp;•&nbsp; Enter/Click = Start/Restart
+    </footer>
+  </div>
+
+  <!-- Audio -->
+  <audio id="neigh" src="neigh.mp3" preload="auto"></audio>
+  <audio id="gallop" src="gallop.mp3" preload="auto" loop></audio>
+  <audio id="music" src="music.mp3" preload="auto" loop></audio>
+
+  <!-- Preload images -->
+  <link rel="preload" as="image" href="chapel.png">
+  <link rel="preload" as="image" href="jump.png">
+  <link rel="preload" as="image" href="background.png">
+
+  <script src="script.js"></script>
+</body>
+</html>
