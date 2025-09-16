@@ -1,0 +1,122 @@
+:root{
+  --text:#e5e7eb;
+  --accent:#22d3ee;
+  --ground:#1f2937;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; margin:0; }
+body{
+  background:#000;
+  color:var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+.wrap{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+.hud{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom: 10px;
+}
+
+.title{
+  font-weight:700;
+  color:var(--text);
+}
+
+.stats{
+  font-variant-numeric: tabular-nums;
+  font-weight:700;
+  color:var(--accent);
+}
+
+#game{
+  position:relative;
+  width:100%;
+  height: 320px;
+  background: url('background.png') center/cover no-repeat;
+  border:1px solid #1f2937;
+  border-radius: 16px;
+  overflow:hidden;
+}
+
+#ground{
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height: 70px;
+  background:#0b0f1d80;
+}
+
+#player{
+  position:absolute;
+  bottom:70px;
+  left:64px;
+  width:100px;   /* larger player */
+  height:100px;
+  background: url('chapel.png') center/contain no-repeat;
+  image-rendering: pixelated;
+  will-change: transform;
+}
+
+.obstacle{
+  position:absolute;
+  bottom:70px;
+  width:70px;    /* larger obstacle */
+  height:80px;
+  background: url('jump.png') center/contain no-repeat;
+  image-rendering: pixelated;
+  will-change: transform;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-content:center;
+  background: rgba(0,0,0,0.6);
+  text-align:center;
+  opacity:0;
+  pointer-events:none;
+  transition:.25s opacity ease;
+  padding: 0 20px;
+}
+.overlay.show{
+  opacity:1;
+  pointer-events:auto;
+}
+.overlay h1{
+  margin:.2rem 0;
+  font-size: clamp(20px, 3.5vw, 34px);
+}
+.overlay p{
+  margin:.2rem 0 .6rem;
+  color:#cbd5e1;
+}
+.overlay .final{
+  margin-top:.4rem;
+  font-weight:700;
+  color:var(--accent);
+}
+
+kbd{
+  background:#111827;
+  border:1px solid #1f2937;
+  padding:.1rem .35rem;
+  border-radius:6px;
+  font-family:inherit;
+  font-weight:700;
+  color:#e5e7eb;
+}
+
+.tips{
+  text-align:center;
+  margin-top:10px;
+  color:#94a3b8;
+  font-size:14px;
+}
